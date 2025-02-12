@@ -6,12 +6,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İlk Sayfa</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="firstpage.css">
 </head>
 
 <body class="background">
+    <div class="heart heart-right"></div>
+    <div class="heart heart-right"></div>
+    <div class="heart heart-right"></div>
+    <div class="heart heart-left"></div>
+    <div class="heart heart-left"></div>
+    <div class="heart heart-left"></div>
     <div class="question-box">
-        <h2>Soru: Zehra'nın en sevdiği renk nedir?</h2>
+        <h2>Soru: Melih'in en sevdiği renk nedir?</h2>
         <input type="text" id="answer">
         <button onclick="checkAnswer()">Cevapla</button>
         <p id="feedback"></p>
@@ -19,13 +25,49 @@
     <script>
         function checkAnswer() {
             const answer = document.getElementById("answer").value.toLowerCase();
-            if (answer === "mavi") {
+            if (answer === "siyah") {
                 window.location.href = "secondpage.html";
             } else {
                 document.getElementById("feedback").innerText = "Yanlış cevap, tekrar deneyin!";
             }
         }
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const heartCount = 15; // Kaç tane kalp olacak
+            const container = document.body;
+            const minXLeft = 0; // Sol taraf için minimum X
+            const maxXLeft = window.innerWidth * 0.15; // Sol taraf için maksimum X
+            const minXRight = window.innerWidth * 0.85; // Sağ taraf için minimum X
+            const maxXRight = window.innerWidth; // Sağ taraf için maksimum X
+
+            for (let i = 0; i < heartCount; i++) {
+                let heart = document.createElement("div");
+                heart.classList.add("heart");
+
+                let randomX;
+                let randomSide = Math.random() > 0.5 ? "left" : "right"; // Sağ mı sol mu karar ver
+
+                if (randomSide === "left") {
+                    randomX = Math.random() * (maxXLeft - minXLeft) + minXLeft; // Sol kenarda tut
+                } else {
+                    randomX = Math.random() * (maxXRight - minXRight) + minXRight; // Sağ kenarda tut
+                }
+
+                let randomY = Math.random() * window.innerHeight; // Dikey konum
+
+                // Kalbin pozisyonunu belirle
+                heart.style.left = `${randomX}px`;
+                heart.style.top = `${randomY}px`;
+
+                // Kalbi sayfaya ekle
+                container.appendChild(heart);
+            }
+        });
+    </script>
+
+
+
 </body>
 
 </html>

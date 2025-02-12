@@ -1,0 +1,86 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+    background-color: #ffccdd;
+    /* Güzel bir pembe tonu */
+}
+
+.container {
+    background: #ffccdd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+    display: inline-block;
+}
+/*'../fotos/WhatsApp%20Image%202025-02-12%20at%2019.44.37.jpeg'*/
+.background {
+    background: url('../fotos/WhatsApp%20Image%202025-02-12%20at%2019.44.37.jpeg') no-repeat center center;
+    background-size: contain;
+    /* Resmi küçült ve sayfanın içine sığdır */
+    background-repeat: no-repeat;
+    /* Tekrar etmesini engelle */
+    background-position: center top;
+    /* Resmi üst tarafa hizala */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.question-box {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+@keyframes moveHeart {
+    0% {
+        transform: translateY(0px) rotate(-45deg);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(-45deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0px) rotate(-45deg);
+        opacity: 0.8;
+    }
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    transform: rotate(-45deg);
+    animation: moveHeart 3s infinite ease-in-out;
+    opacity: 0.9;
+}
+
+/* Kalbin üst yuvarlakları */
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+/* Sol yuvarlak */
+.heart::before {
+    top: -15px;
+    left: 0;
+}
+
+/* Sağ yuvarlak */
+.heart::after {
+    top: 0;
+    left: 15px;
+}

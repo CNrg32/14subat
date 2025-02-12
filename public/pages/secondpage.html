@@ -1,4 +1,3 @@
-<!-- secondpage.html -->
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -6,11 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İkinci Sayfa</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="secondpage.css">
 </head>
 
 <body>
-    <h1>Tebrikler! Doğru cevabı verdiniz.</h1>
+    <div class="container">
+        <img src="../fotos2/WhatsApp_Image_2025-02-12_at_20.26.52.jpeg" alt="Seçtiğin Fotoğraf" class="background-img">
+        <h1>🎉 Tebrikler! 🎉</h1>
+        <button id="showMessage">Sürpriz!</button>
+        <p id="message" class="hidden">💙 İşte özel mesajın! 💙</p>
+    </div>
+
+    <script>
+        document.getElementById("showMessage").addEventListener("click", function () {
+            document.getElementById("message").classList.toggle("show");
+        });
+    </script>
 </body>
 
 </html>
