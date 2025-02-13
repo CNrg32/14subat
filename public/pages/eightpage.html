@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sekizinci Sayfa</title>
+    <link rel="stylesheet" href="eightpage.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            position: relative;
+            background: url('../fotos/WhatsApp Image 2025-02-12 at 19.44.56 (1).jpeg') no-repeat center center fixed;
+            background-size: contain;
+        }
+
+        .question-container {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 0px 10px gray;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .heart {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: red;
+            transform: rotate(-45deg);
+            animation: float 4s infinite ease-in-out;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -30px;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: 30px;
+        }
+
+        .heart.left {
+            left: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .heart.right {
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(-10px) rotate(-45deg);
+            }
+
+            50% {
+                transform: translateY(10px) rotate(-45deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heart left"></div>
+    <div class="heart right"></div>
+    <div class="question-container">
+        <h2>En sevdiğim diziyi tahmin et</h2>
+        <input type="text" id="answer">
+        <button onclick="checkAnswer()">Cevapla</button>
+        <p id="feedback"></p>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById("answer").value.toLowerCase();
+            if (answer.includes("how ı met your mother")) {
+                window.location.href = "ninthpage.html";
+            } else {
+                document.getElementById("feedback").innerText = "Yanlış cevap, biraz daha düşün!";
+            }
+        }
+    </script>
+</body>
+
+</html>

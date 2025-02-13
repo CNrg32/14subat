@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üçüncü Sayfa</title>
+    <link rel="stylesheet" href="thirdpage.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../fotos/WhatsApp Image 2025-02-12 at 19.44.51 (2).jpeg') no-repeat center center;
+            background-size: contain;
+            opacity: 0.8;
+        }
+
+        .question-container {
+            background: rgba(187, 9, 169, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 0px 10px gray;
+            position: relative;
+            z-index: 1;
+        }
+
+        .side-image {
+            position: absolute;
+            width: 150px;
+            height: auto;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        .side-image.left {
+            left: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .side-image.right {
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(-50%) translateX(0);
+            }
+
+            50% {
+                transform: translateY(-50%) translateX(10px);
+            }
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid rgb(245, 12, 12);
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #ff4d6d;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e6004c;
+        }
+
+        #feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background"></div>
+    <img src="../fotos/WhatsApp Image 2025-02-12 at 19.44.42 (1).jpeg"
+        class="side-image left" alt="Left Image">
+    <img src="../fotos/WhatsApp Image 2025-02-12 at 19.44.42 (2).jpeg"
+        class="side-image right" alt="Right Image">
+    <div class="question-container">
+        <h2>Soru: Melih ilk datede bowla ne kadar para ödemiştir?</h2>
+        <input type="text" id="answer">
+        <button onclick="checkAnswer()">Cevapla</button>
+        <p id="feedback"></p>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById("answer").value.toLowerCase();
+            if (answer === "700") {
+                window.location.href = "fourthpage.html";
+            } else {
+                document.getElementById("feedback").innerText = "Yanlış cevap, tekrar deneyin!";
+            }
+        }
+    </script>
+</body>
+
+</html>

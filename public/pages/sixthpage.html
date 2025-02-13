@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altıncı Sayfa</title>
+    <link rel="stylesheet" href="sixthpage.css">
+</head>
+
+<body>
+    <div class="container">
+        <img src="../fotos/WhatsApp Image 2025-02-12 at 19.44.52 (1).jpeg" alt="Seçtiğin Fotoğraf"
+            class="background-img">
+        <h1>🎉 Tebrikler! 🎉</h1>
+        <button id="showMessage">Sürpriz!</button>
+        <button id="nextPage" onclick="window.location.href='eightpage.html'">Sonraki Sayfa</button>
+        <p id="message" class="hidden">💙 3.Bazen o kadar tuhaf geliyoki yaptıkların anlam veremiyorum.Niye beni seviyosun anlamıyorum,niye bu kadar önemsiyosun
+        anlamıyorum,niye benimle konuşmak istiyosun anlamıyorum,nasıl beni sevebiliyosun anlayamıyorum,nasıl beni
+        gülümsetebiliyorsun anlamıyorum(ki bildiğin üzere kadınlar komik değildir),nasıl benle hayal kurabiliyosun
+        anlamıyorum,nasıl beni kaybettiğin kabuslar görebiliyosun anlamıyorum,anlayamıyorum gerçekten.Ben kendimi bu kadar
+        sevmezken sen nasıl beni sevebiliyosun hiç anlamıyorum.Aşk gerçekten böyle bişey mi? 💙</p>
+    </div>
+
+    <script>
+        document.getElementById("showMessage").addEventListener("click", function () {
+            document.getElementById("message").classList.toggle("show");
+        });
+    </script>
+</body>
+
+</html>

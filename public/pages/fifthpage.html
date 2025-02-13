@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beşinci Sayfa</title>
+    <link rel="stylesheet" href="fifthpage.css">
+    
+</head>
+
+
+<button onclick="skipQuestion()"
+    style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); background-color: #ff0000; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">Eğer
+    soru çok zorsa bas (ama basarsan süprize erişemeyeceksin)</button>
+
+<img src="../fotos/WhatsApp Image 2025-02-12 at 19.44.44 (2).jpeg" class="heart-image left" alt="Heart Left">
+<img src="../fotos/WhatsApp Image 2025-02-12 at 19.44.46 (2).jpeg" class="heart-image right" alt="Heart Right">
+<div class="question-container">
+    <h2>Soru:  f(x) = (3x^2 + 5)(x - 2)  fonksiyonunun türevi 20 olduğunda ( x ) kaçtır?</h2>
+    <input type="text" id="answer">
+    <button onclick="checkAnswer()">Cevapla</button>
+    <p id="feedback"></p>
+</div>
+
+<script>
+    function checkAnswer() {
+        const answer = document.getElementById("answer").value;
+        if (answer === "4") {
+            window.location.href = "sixthpage.html";
+        } else {
+            document.getElementById("feedback").innerText = "Yanlış cevap, tekrar deneyin!";
+        }
+    }
+</script>
+<script>
+    function skipQuestion() {
+        window.location.href = 'seventhpage.html';
+    }
+</script>
+</body>
+
+</html>
